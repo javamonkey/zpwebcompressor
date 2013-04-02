@@ -5,5 +5,5 @@
 	<classpathentry kind="lib" path="lib/jargs-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/rhino-1.6R7.jar"/>
 	<classpathentry kind="lib" path="lib/ant.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,0 +1,1 @@
+function(c){var b=1;var a="aaaaa";return aaaa+a}var zz=window.parent.histroy;

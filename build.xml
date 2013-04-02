@@ -18,9 +18,8 @@
         <javac srcdir="${src.dir}"
                destdir="${build.dir}/classes"
                includes="**/*.java"
-               deprecation="off"
-               debug="on"
-               source="1.5">
+             
+               >
             <classpath>
                 <pathelement location="${lib.dir}/jargs-1.0.jar"/>
                 <pathelement location="${lib.dir}/rhino-1.6R7.jar"/>
@@ -28,7 +27,7 @@
         </javac>
     </target>
 
-    <target name="build.jar" depends="build.classes">
+    <target name="build.jar" depends="-init">
         <mkdir dir="${build.dir}/jar"/>
         <!-- The order is important here. Rhino MUST be unjarred first!
              (some of our own classes will override the Rhino classes) -->
@@ -39,7 +38,7 @@
         </copy>
         <jar destfile="${build.dir}/${jar.name}" basedir="${build.dir}/jar">
             <manifest>
-                <attribute name="Main-Class" value="com.yahoo.platform.yui.compressor.Bootstrap"/>
+                <attribute name="Main-Class" value="org.bee.compress.BeeCompressor"/>
             </manifest>
         </jar>
     </target>

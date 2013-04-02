@@ -1,0 +1,23 @@
+<project name="Compressor Test" default="example" basedir=".">
+        
+       <typedef name="beecompressor" classname="org.bee.compress.CompressAntTask"
+         classpath="build/zp.compressor.jar-1.0.jar" />
+        
+        <target name="example">
+                <beecompressor  todir="${basedir}/deploy" keepRunning="true" linebreak="200">
+                        <fileset dir="${basedir}/test" includes="*.js" excludes="*-min.js"/>                       
+                        <mapper type="glob" from="*.js" to="*-min.js"/>
+                </beecompressor>
+                
+                <beecompressor  todir="${basedir}/deploy">
+                        <fileset dir="${basedir}/test" includes="*.jsp"/>
+                        <mapper type="glob" from="*.jsp" to="*.jsp"/>
+                </beecompressor>
+                
+                  <beecompressor  todir="${basedir}/deploy">
+                        <fileset dir="${basedir}/test" includes="*.css"/>
+                        <mapper type="glob" from="*.css" to="*.css"/>
+                </beecompressor>
+        </target>
+
+</project>
